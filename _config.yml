@@ -1,2 +1,6 @@
 exclude:
+  - A/scripts/
+  - A/tests/
+  - B/scripts/
+  - B/tests/
 # NEWPROBLEM
