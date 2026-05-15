@@ -1,0 +1,14 @@
+name: New problem
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Problem name? (A-Z, a-z only, use spaces to separate multiple problems)'
+        required: true
+
+jobs:
+  run:
+    uses: tw20000807/tps-actions/.github/workflows/new-problem.yml@main
+    with:
+      name: ${{ github.event.inputs.name }}

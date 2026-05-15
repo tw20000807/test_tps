@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article}
+\title{Appendix}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont[]{Noto Sans Mono CJK TC}
+\setCJKmonofont[]{Noto Sans Mono CJK TC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{listings}
+\usepackage{url}
+\lstset{language=C++,basicstyle=\ttfamily}
+\renewcommand{\thepage}{Appendix - \arabic{page}}
+\begin{document}
+
+\begin{center}
+\textbf{\huge 附錄}\\
+\vspace{5mm}
+
+
+\rule{17cm}{2pt}\\
+\vspace{7mm}
+
+\huge 附錄說明\\
+\end{center}
+
+\fontsize{14pt}{20pt}\selectfont
+更多說明
+
+\end{document}
