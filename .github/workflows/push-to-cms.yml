@@ -1,6 +1,6 @@
 name: Push to CMS
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       problems:
         description: 'File path. Ex. "Day1/Sample"'
