@@ -12,7 +12,7 @@ on:
         type: boolean
 jobs:
   run:
-    uses: tw20000807/cms-actions/.github/workflows/push-to-cms.yml@main
+    uses: tw20000807/cms-action/.github/workflows/push-to-cms.yml@main
     with:
       problems: ${{ inputs.problems }}
       first: ${{ inputs.first }}
