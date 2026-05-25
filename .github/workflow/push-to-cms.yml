@@ -3,30 +3,16 @@ on:
   workflow_call:
     inputs:
       problems:
-        description: 'Problem name'
+        description: 'File path. Ex. "Day1/Sample"'
         default: ''
         type: string
-      
+      first:
+        description: 'first push to CMS?'
+        default: false
+        type: boolean
 jobs:
-  push:
-    runs-on: [self-hosted]
-    timeout-minutes: 5
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: gogo
-        run: |
-          for prob in ${{ inputs.problem }}; do 
-            if [ ! -d "${prob}" ]; then
-              echo "'${prob}' Not Found"
-              exit 1
-            fi
-            (
-              set -e
-              cd "${prob}"
-              tps gen
-              tps export CMS -a none -o cms_dir
-              cmsImportTask cms_dir
-              rm -rf cms_dir
-            )
-          done
+  run:
+    uses: tw20000807/cms-actions/.github/workflows/push-to-cms.yml@main
+    with:
+      problems: ${{ inputs.problems }}
+      first: ${{ inputs.first }}
